@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+body {
+    margin: 0;
+    background-color: #f2f4f8;
+    color: #1a1a1a;
+}
+.oculto {
+    display: none !important;
+}
+header {
+    background-color: #cc3333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+#info-perfil-activo {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    background-color: #2b3a55;
+    padding: 12px;
+}
+nav button {
+    background-color: #3d5077;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+nav button:hover {
+    background-color: #4f668f;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #555;
+}
+footer a {
+    color: #cc3333;
+}
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 15px 40px 15px;
+}
+.vista h2 {
+    color: #2b3a55;
+}
+form {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-end;
+}
+form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+form input,
+form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 200px;
+}
+form button {
+    background-color: #cc3333;
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #a82828;
+}
+form button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+.mensaje-error-api {
+    background-color: #fdecea;
+    border: 1px solid #d32f2f;
+    color: #d32f2f;
+    padding: 10px;
+    border-radius: 6px;
+}
+#lista-perfiles,
+#lista-equipos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.tarjeta-perfil,
+.tarjeta-equipo {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 160px;
+}
+.tarjeta-perfil button,
+.tarjeta-equipo button {
+    background-color: #2b3a55;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#fichas-pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+.ficha-pokemon {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+.ficha-pokemon img {
+    width: 80px;
+    height: 80px;
+}
+.ficha-pokemon h4 {
+    margin: 5px 0;
+    text-transform: capitalize;
+}
+.tipos-pokemon {
+    margin: 0 0 6px 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #cc3333;
+}
+.lista-stats,
+.lista-movimientos {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+    font-size: 0.8rem;
+    text-align: left;
+}
+.lista-movimientos {
+    border-top: 1px solid #eee;
+    padding-top: 6px;
+    text-transform: capitalize;
+}
+.combatientes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.tarjeta-combate {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+.tarjeta-combate img {
+    width: 90px;
+    height: 90px;
+}
+.tarjeta-combate h4 {
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+.botones-movimientos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+.botones-movimientos button {
+    background-color: #2b3a55;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.botones-movimientos button:hover:not(:disabled) {
+    background-color: #4f668f;
+}
+.botones-movimientos button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+#resultado-duelo {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #eaf7ec;
+    border: 1px solid #2e7d32;
+    color: #2e7d32;
+    padding: 10px;
+    border-radius: 6px;
+}
+#log-duelo {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px 15px 15px 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    max-height: 250px;
+    overflow-y: auto;
+}
+#log-duelo li {
+    margin-bottom: 6px;
+}
+@media (max-width: 480px) {
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    form input,
+    form select {
+        min-width: 0;
+        width: 100%;
+    }
+    .combatientes {
+        flex-direction: column;
+    }
+}

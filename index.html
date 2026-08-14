@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeBattle</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+    <header>
+        <h1>PokeBattle</h1>
+        <p id="info-perfil-activo"></p>
+    </header>
+    <nav id="nav-app" class="oculto">
+        <button id="boton-ir-equipos" type="button">Equipos</button>
+        <button id="boton-ir-duelo" type="button">Duelo</button>
+        <button id="boton-cambiar-perfil" type="button">Cambiar perfil</button>
+    </nav>
+    <main>
+        <section id="vista-inicio" class="vista">
+            <h2>Seleccioná tu perfil de entrenador</h2>
+            <div id="lista-perfiles"></div>
+            <form id="form-nuevo-perfil">
+                <label for="nombre-perfil">Nombre de entrenador nuevo</label>
+                <input type="text" id="nombre-perfil" required>
+                <button type="submit">Crear perfil</button>
+            </form>
+        </section>
+        <section id="vista-equipos" class="vista oculto">
+            <h2>Equipos de <span id="nombre-entrenador-actual"></span></h2>
+            <div id="lista-equipos"></div>
+            <form id="form-nuevo-equipo">
+                <label for="nombre-equipo">Nombre del equipo nuevo</label>
+                <input type="text" id="nombre-equipo" required>
+                <button type="submit">Crear equipo</button>
+            </form>
+            <article id="detalle-equipo" class="oculto">
+                <h3>Equipo: <span id="nombre-equipo-detalle"></span></h3>
+                <div id="fichas-pokemon"></div>
+                <form id="form-agregar-pokemon">
+                    <label for="buscar-pokemon">Agregar Pokémon (nombre o número)</label>
+                    <input type="text" id="buscar-pokemon" placeholder="ej. pikachu o 25">
+                    <button type="submit">Buscar y agregar</button>
+                </form>
+                <p id="error-agregar-pokemon" class="mensaje-error-api oculto"></p>
+            </article>
+        </section>
+        <section id="vista-duelo" class="vista oculto">
+            <h2>Pantalla de duelo</h2>
+            <form id="form-iniciar-duelo">
+                <label for="select-equipo-duelo">Elegí tu equipo activo</label>
+                <select id="select-equipo-duelo"></select>
+                <button type="submit">Iniciar duelo</button>
+            </form>
+            <p id="mensaje-duelo" class="mensaje-error-api oculto"></p>
+            <div id="zona-batalla" class="oculto">
+                <div class="combatientes">
+                    <article id="pokemon-jugador" class="tarjeta-combate"></article>
+                    <article id="pokemon-ia" class="tarjeta-combate"></article>
+                </div>
+                <div id="botones-movimientos" class="botones-movimientos"></div>
+                <p id="resultado-duelo" class="oculto"></p>
+                <h3>Registro de la batalla</h3>
+                <ul id="log-duelo"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Proyecto Final — PokéBattle. Datos de <a href="https://pokeapi.co" target="_blank" rel="noopener">PokéAPI</a>.</p>
+    </footer>
+    <script src="api.js"></script>
+    <script src="almacenamiento.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
